@@ -10,3 +10,13 @@ def index():
     '''
     message = 'NEWS HIGHLIGHT'
     return render_template('index.html',message = message)
+
+@app.route('/sources/<int:articles_id>')
+def articles(articles_id):
+	'''
+	view articles page
+	'''
+	# articles = get_articles(id)
+	# title = f'NH | {id}'
+
+	return render_template('articles.html',id = articles_id)
