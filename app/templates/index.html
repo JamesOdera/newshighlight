@@ -1,3 +1,4 @@
+{% import 'macros.html' as macro%}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -11,6 +12,39 @@
         {% endif %}
 </head>
 <body>
-    <h1> {{ message }} </h1>
+    {% block content%}
+    <div class="container">
+            <!-- Business News Section  -->
+            <h3> Top Business News Sources</h3>
+            <hr>
+    
+            {{ macro.displaySourceList(sources)}}
+    
+            <!-- Business News Section  -->
+             
+            <h3> Top Technology News Sources</h3>
+            <hr>
+    
+            {{ macro.displaySourceList(technology_sources)}}
+    
+            <!-- Entertainment News Section  -->
+             
+            <h3> Top Entertainment News Sources</h3>
+            <hr>
+    
+            {{ macro.displaySourceList(entertainment_sources)}}
+    
+            <!-- Entertainment News Section  -->
+             
+            <h3> Top Sports News Sources</h3>
+            <hr>
+    
+            {{ macro.displaySourceList(sports_sources)}}
+        
+    </div>
+    
+    
+    {%endblock%}
+    
 </body>
 </html>
