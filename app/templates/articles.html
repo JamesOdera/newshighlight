@@ -12,12 +12,12 @@
     {% endif %}
 </head>
 <body>
-    <h1> Hello Article {{ id }} </h1>
+   
 
-    {% block content%}
+{% block content%}
 <div class="container-fluid">
 
-        <h2> Top Headlines</h2>
+        <h2> Top News Making The Headlines</h2>
         {% for article_row in articles | batch(4)%}
 
 	        <div class="row">

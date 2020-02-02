@@ -1,0 +1,19 @@
+body {
+    background-color: rgb(226, 226, 226);
+}
+h1 {
+    color: rgb(0, 0, 0);
+}
+.panel-heading {
+    background-color: black;
+}
+
+.btn {
+    background-color: black;
+    color: white;
+}
+
+.btn a:hover{
+    background-color: white;
+    color: black;
+}
