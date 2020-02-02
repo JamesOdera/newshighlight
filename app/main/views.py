@@ -1,9 +1,10 @@
 from flask import render_template,request,redirect,url_for
-from app import app
-from .request import get_sources,get_articles,search_source
+from . import main
+from ..request import get_sources,get_articles,search_source
+from ..models import Source
 
 # Views
-@app.route('/')
+@main.route('/')
 def index():
 
     '''
@@ -25,7 +26,7 @@ def index():
     
     
 
-@app.route('/sources/<id>')
+@main.route('/sources/<id>')
 def articles(id):
 	'''
 	view articles page
@@ -38,7 +39,7 @@ def articles(id):
 
 
 ##############
-@app.route('/search/<source_name>')
+@main.route('/search/<source_name>')
 def search(source_name):
     '''
     View function to display the search results
