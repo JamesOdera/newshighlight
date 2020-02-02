@@ -1,6 +1,11 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
 
+{% block styles%}
+    {{ super() }}
+    <link rel="stylesheet" href="{{url_for('static',filename='css/indexss.css')}}">
+{% endblock %}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -37,26 +42,6 @@
     
             {{ macro.displaySourceList(sources)}}
     
-             
-            <!-- <h4> Top Technology News Sources</h4>
-            <hr>
-            <hr>
-     -->
-            <!-- {{ macro.displaySourceList(technology_sources)}}
-    
-             
-            <h4> Top Entertainment News Sources</h4>
-            <hr>
-            <hr>
-    
-            {{ macro.displaySourceList(entertainment_sources)}}
-    
-             
-            <h4> Top Sports News Sources</h4>
-            <hr>
-            <hr>
-    
-            {{ macro.displaySourceList(sports_sources)}} -->
         
     </div>
     
