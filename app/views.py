@@ -11,20 +11,20 @@ def index():
     '''
     sources = get_sources('category')
     print(sources)
-    # sports_sources = get_sources('sports')
-    # technology_sources = get_sources('technology')
-    # entertainment_sources = get_sources('entertainment')
+    sports_sources = get_sources('sports')
+    technology_sources = get_sources('technology')
+    entertainment_sources = get_sources('entertainment')
     title = 'NEWS HIGHLIGHT'
-    return render_template('index.html', title = title,sources = sources)
-    # ,sports_sources = sports_sources,technology_sources = technology_sources,entertainment_sources=entertainment_sources
+    return render_template('index.html', title = title,sources = sources,sports_sources = sports_sources,technology_sources = technology_sources,entertainment_sources=entertainment_sources)
+    
     
 
-@app.route('/sources/<int:articles_id>')
-def articles(articles_id):
+@app.route('/sources/<id>')
+def articles(id):
 	'''
 	view articles page
 	'''
 	articles = get_articles(id)
 	title = f'NH | {id}'
 
-	return render_template('articles.html',id = articles_id)
+	return render_template('articles.html',title= title,articles = articles)

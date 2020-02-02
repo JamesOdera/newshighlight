@@ -1,13 +1,16 @@
 from app import app
 import urllib.request,json
-from .models import source
+from .models import source,article
 
 Source = source.Source
+Article = article.Article
 
 # Getting api key
 api_key = app.config['NEWS_API_KEY']
 
 base_url = app.config['NEWS_API_BASE_URL']
+
+articles_url = app.config['ARTICLES_BASE_URL']
 
 
 def get_sources(category):
@@ -68,5 +71,29 @@ def get_articles(id):
 		articles_object = None
 		if articles_results['articles']:
 			articles_object = process_articles(articles_results['articles'])
+
+	return articles_object
+
+def process_articles(articles_list):
+	'''
+	'''
+	articles_object = []
+	for article_item in articles_list:
+		id = article_item.get('id')
+		author = article_item.get('author')
+		title = article_item.get('title')
+		description = article_item.get('description')
+		url = article_item.get('url')
+		image = article_item.get('urlToImage')
+		date = article_item.get('publishedAt')
+		
+		if image:
+			articles_results = Article(id,author,title,description,url,image,date)
+			articles_object.append(articles_results)	
+		
+
+		
+
+		
 
 	return articles_object
