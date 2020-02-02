@@ -100,16 +100,16 @@ def process_articles(articles_list):
 
 #######################
 def search_source(source_name):
-    search_source_url = 'https://newsapi.org/v2/search/source?api_key={}&query={}'.format(api_key,source_name)
+    search_source_url = 'https://newsapi.org/v2/sources?apikey={}&query={}'.format(api_key,source_name)
     with urllib.request.urlopen(search_source_url) as url:
         search_source_data = url.read()
         search_source_response = json.loads(search_source_data)
 
         search_source_results = None
 
-        if search_source_response['results']:
-            search_source_list = search_source_response['results']
-            search_source_results = process_results(search_source_list)
+        if search_source_response['sources']:
+            search_source_list = search_source_response['sources']
+            search_source_results = process_sources(search_source_list)
 
 
     return search_source_results
