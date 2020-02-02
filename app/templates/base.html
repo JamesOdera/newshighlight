@@ -1,4 +1,8 @@
 {% extends 'bootstrap/base.html'%}
+
+{% block navbar %}
+    {% include 'navbar.html' %}
+{% endblock %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -9,7 +13,7 @@
         {% if title %}
         <title> {{ title }}</title>
         {% else %}
-        <title> Welcome to the best Movie Review website </title>
+        <title> NEWS HIGHLIGHT </title>
         {% endif %}
 </head>
 <body>
