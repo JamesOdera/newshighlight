@@ -1,5 +1,6 @@
 {% extends 'base.html'%}
 {% import 'macros.html' as macro%}
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -13,31 +14,44 @@
         {% endif %}
 </head>
 <body>
+    
     {% block content%}
+
+
     <div class="container">
-            <!-- Business News Section  -->
-            <h3> Top Business News Sources</h3>
+        <form>
+            <input type="text" name="source_query" placeholder="Search for a News" class="form-control">
+            <input type="submit"  value="Search" class="btn btn-default">
+        </form>
+    
+    </div>
+
+
+    <div class="container-fluid">
+        
+            <h4> Top Business News Sources</h4>
+            <hr>
             <hr>
     
             {{ macro.displaySourceList(sources)}}
     
-            <!-- Business News Section  -->
              
-            <h3> Top Technology News Sources</h3>
+            <h4> Top Technology News Sources</h4>
+            <hr>
             <hr>
     
             {{ macro.displaySourceList(technology_sources)}}
     
-            <!-- Entertainment News Section  -->
              
-            <h3> Top Entertainment News Sources</h3>
+            <h4> Top Entertainment News Sources</h4>
+            <hr>
             <hr>
     
             {{ macro.displaySourceList(entertainment_sources)}}
     
-            <!-- Entertainment News Section  -->
              
-            <h3> Top Sports News Sources</h3>
+            <h4> Top Sports News Sources</h4>
+            <hr>
             <hr>
     
             {{ macro.displaySourceList(sports_sources)}}
